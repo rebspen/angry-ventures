@@ -12,7 +12,6 @@ import styled from "styled-components"
 import "./layout.css"
 
 const Main = styled.main`
-  max-width: 800px;
   margin: 0 auto;
 `
 const navigationQuery = graphql`
@@ -42,7 +41,7 @@ const navigationQuery = graphql`
 const NavLink = styled.div`
   margin: auto 0;
   a {
-    color: white;
+    color: navy;
     padding: 0 16px;
     text-decoration: none;
     font-weight: bold;
@@ -56,8 +55,8 @@ const NavLink = styled.div`
 
 const Header = styled.header`
   display: flex;
-  background: black;
-  height: 66px;
+  background: white;
+  height: 100px;
   padding: 0 16px;
   box-sizing: border-box;
 `

@@ -23,11 +23,9 @@ const navigationQuery = graphql`
             branding
             navigation_links {
               label
-              link {
-                ... on PRISMIC_Page {
-                  _meta {
-                    uid
-                  }
+              nav_link {
+                ... on PRISMIC__ExternalLink {
+                  url
                 }
               }
             }
@@ -56,8 +54,8 @@ const NavLink = styled.div`
 const Header = styled.header`
   display: flex;
   background: white;
-  height: 100px;
-  padding: 0 16px;
+  height: 120px;
+  padding: 0 7em;
   box-sizing: border-box;
 `
 
@@ -66,10 +64,10 @@ const NavLinks = styled.div`
   display: flex;
 `
 const Branding = styled.div`
-  color: orange;
-  font-weight: bold;
-  margin: auto 0;
-  font-size: 20px;
+img{
+  width: 2em;
+  margin-top: 2.3em;
+}
 `
 
 const Layout = ({ children }) => {
@@ -82,17 +80,17 @@ const Layout = ({ children }) => {
             console.log(data)
             return (
               <>
-                <Branding>
-                  {data.prismic.allNavigations.edges[0].node.branding}
-                </Branding>
+              <Branding>
+                <img src={data.prismic.allNavigations.edges[0].node.branding.url} alt=""/>
+              </Branding>
                 <NavLinks>
                   {data.prismic.allNavigations.edges[0].node.navigation_links.map(
                     link => {
                       return (
-                        <NavLink key={link.link._meta.uid}>
-                          <Link to={`/${link.link._meta.uid}`}>
+                        <NavLink key={link.nav_link.url}>
+                          <a href={link.nav_link.url}>
                             {link.label}
-                          </Link>
+                          </a>
                         </NavLink>
                       )
                     }

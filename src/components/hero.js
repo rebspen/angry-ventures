@@ -12,8 +12,6 @@ background-repeat: no-repeat;
 const Hero = ({ title, content, backgroundImage }) => {
   return (
     <HeroWrapper backgroundImage={backgroundImage}>
-      <RichText render={title}/>
-      <p>{content}</p>
     </HeroWrapper>
   );
 };

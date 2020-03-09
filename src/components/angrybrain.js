@@ -15,6 +15,7 @@ const TextSection = styled.div`
   font-weight: 300;
   @media screen and (max-width: 1050px) {
     flex-direction: column;
+    
 }
 `
 
@@ -23,7 +24,9 @@ const Textbox = styled.div`
   text-align: left;
   margin: 1em;
   @media screen and (max-width: 1050px) {
-    width: 100%
+    max-width: 90%;
+    min-width: 90%;
+   
 }
 `
 

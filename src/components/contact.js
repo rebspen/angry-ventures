@@ -5,10 +5,16 @@ import styled from "styled-components";
 const ContactSection = styled.section`
   margin: 5vw 17vw;
   text-align: center;
+  @media screen and (max-width: 1050px) {
+    margin: 3vw 10vw;
+}
   h1 {
     font-size: 2.5em;
     weight: 300;
     margin-bottom: 0.2em;
+    @media screen and (max-width: 1050px) {
+      font-size: 1.5em; 
+}
   }
   div {
     background-color: #d8e56b;
@@ -16,6 +22,9 @@ const ContactSection = styled.section`
   }
   p {
     margin: 0;
+    @media screen and (max-width: 1050px) {
+      font-size: 0.8em; 
+}
   }
   input {
     margin: 0.4em 0;
@@ -27,6 +36,9 @@ const ContactSection = styled.section`
   }
   small {
     font-size: 12px;
+    @media screen and (max-width: 1050px) {
+      font-size: 0.3em; 
+}
   }
 
   img {

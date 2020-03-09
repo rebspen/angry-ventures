@@ -58,6 +58,9 @@ const Header = styled.header`
   height: 120px;
   padding: 0 7em;
   box-sizing: border-box;
+  @media screen and (max-width: 1050px) {
+    padding: 0 3em;
+}
 `;
 
 const NavLinks = styled.div`

@@ -10,7 +10,6 @@ margin: 6vw 15vw 3vw 15vw;
 const TextSection = styled.div`
   display: flex;
   flex-direction: row;
-  flex-wrap: wrap;
   font-size: 22px;
   font-weight: 300;
   @media screen and (max-width: 1050px) {

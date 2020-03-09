@@ -47,10 +47,10 @@ background-position: center;
 }
 `;
 
-const Case = ({ cases, icon }) => {
+const Case = ({ cases, icon, case2 }) => {
   console.log("cases", cases);
   return cases.map((val, i) => {
-    if (i % 2 === 0) {
+    if (!case2 && i % 2 === 0) {
       return (
         <>
           <CaseSection>
@@ -68,7 +68,7 @@ const Case = ({ cases, icon }) => {
           </CaseSection>
         </>
       );
-    } else {
+    } else if (!case2) {
       return (
         <>
           <CaseSection>
@@ -82,6 +82,43 @@ const Case = ({ cases, icon }) => {
             <CaseDivide>
               <ImageWrapper caseImage={val.case_image.url}></ImageWrapper>
               {/* <img src={val.case_image.url} /> */}
+            </CaseDivide>
+          </CaseSection>
+        </>
+      );
+    }
+    else if(case2 && i % 2 === 0){
+      return (
+        <>
+          <CaseSection>
+            <CaseDivide>
+            <div>
+              <RichText render={val.case_title} />
+              <p>{val.case_content}</p>
+            </div>
+              <a href={val.case_link}><strong>{val.case_link_label}</strong><img className="icon" src={icon.url} alt=""/></a>
+            </CaseDivide>
+            <CaseDivide>
+              <ImageWrapper caseImage={val.case_image.url}></ImageWrapper>
+              {/* <img src={val.case_image.url} /> */}
+            </CaseDivide>
+          </CaseSection>
+        </>
+      );
+    } else {
+      return (
+        <>
+          <CaseSection>
+            <CaseDivide >
+              <ImageWrapper caseImage={val.case_image.url}></ImageWrapper>
+              {/* <img src={val.case_image.url} /> */}
+            </CaseDivide>
+            <CaseDivide>
+            <div>
+              <RichText render={val.case_title} />
+              <p>{val.case_content}</p>
+            </div>
+              <a href={val.case_link}><strong>{val.case_link_label}</strong> <img className="icon" src={icon.url} alt=""/></a>
             </CaseDivide>
           </CaseSection>
         </>

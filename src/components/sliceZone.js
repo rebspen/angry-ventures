@@ -44,7 +44,7 @@ const SliceZone = ({ body }) => {
           );
         } else if (val.type === "case_2") {
           return (
-            <Case key={i} cases={val.fields} icon={val.primary.click_image} />
+            <Case key={i} cases={val.fields} icon={val.primary.click_image} case2={true} />
           );
         } else if (val.type === "sequences") {
           return (

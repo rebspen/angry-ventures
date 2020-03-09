@@ -17,6 +17,7 @@ const SliceZone = ({ body }) => {
             <Hero
               backgroundImage={val.primary.background_image.url}
               logoImage={val.primary.logo_image.url}
+              slider={val.primary.slider_image.url}
               key={i}
             />
           );

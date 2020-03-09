@@ -20,6 +20,7 @@ export const query = graphql`
                 hero_content
                 hero_title
                 logo_image
+                slider_image
               }
             }
             ... on PRISMIC_HomepageBodyAngry_brain {

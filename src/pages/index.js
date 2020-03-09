@@ -35,6 +35,12 @@ export const query = graphql`
                 case_content
                 case_image
                 case_title
+                case_link {
+                  ... on PRISMIC__ExternalLink {
+                    url
+                  }
+                }
+                case_link_label
               }
             }
             ... on PRISMIC_HomepageBodyTools {
@@ -60,6 +66,12 @@ export const query = graphql`
                 case_content
                 case_image
                 case_title
+                case_link {
+                  ... on PRISMIC__ExternalLink {
+                    url
+                  }
+                }
+                case_link_label
               }
             }
             ... on PRISMIC_HomepageBodySequences {

@@ -4,13 +4,15 @@ import styled from "styled-components"
 
 const BrainSection = styled.section`
 text-align: center;
-margin: 7vw 20vw;
+margin: 6vw 15vw 3vw 15vw;
 `
 
 const TextSection = styled.div`
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
+  font-size: 22px;
+  font-weight: 300;
 `
 
 const Textbox = styled.div`

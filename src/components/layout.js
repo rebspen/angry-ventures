@@ -62,6 +62,13 @@ const Header = styled.header`
 const NavLinks = styled.div`
   margin-left: auto;
   display: flex;
+  margin-bottom: 1em;
+
+  img{
+  width: 3em;
+  margin:0 1em;
+  margin-bottom: -1em;
+}
 `
 const Branding = styled.div`
 img{
@@ -90,6 +97,7 @@ const Layout = ({ children }) => {
                         <NavLink key={link.nav_link.url}>
                           <a href={link.nav_link.url}>
                             {link.label}
+                            <img src="/icons/right-arrow.png" alt=""/>
                           </a>
                         </NavLink>
                       )

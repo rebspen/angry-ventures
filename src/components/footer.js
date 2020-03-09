@@ -3,12 +3,12 @@ import { RichText } from "prismic-reactjs";
 import styled from "styled-components";
 
 const FooterSection = styled.section`
-  padding: 3vw 20vw 1vw 20vw;
+  padding: 3vw 20vw 0vw 20vw;
   background-color: #1e2341;
   color: #d8e56b;
   text-align: center;
   img{
-    width:4.5em;
+    width:3.5em;
     margin:1em;
   }
 `;

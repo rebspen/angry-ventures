@@ -3,31 +3,52 @@ import { RichText } from "prismic-reactjs";
 import styled from "styled-components";
 
 const FooterEndSection = styled.section`
-  padding: 1vw 20vw 3vw 20vw;
+  padding: 0vw 20vw 3vw 20vw;
   background-color: #1e2341;
-  color: #d8e56b;
-  text-align: center;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
 
-  a{
-    text-decoration: none
+  div {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+  }
+
+  span{
+    color:#1e2341;
+  }
+
+  a {
+    text-decoration: none;
     color: #d8e56b;
+  }
+
+  p {
+    font-size: 15px;
   }
 `;
 
-const FooterEnd = ({links}) => {
+const FooterEnd = ({ links }) => {
   return (
     <FooterEndSection>
-{links.map(val => {
-return (
-  <a href ={val.footer_link.url}><p> {val.footer_content} - </p></a>
-);
-})}
+      <div>
+        {links.map((val, i) => {
+          if (i !== links.length - 1) {
+            return (
+              <a href={val.footer_link.url}>
+                <p>
+                  {val.footer_content} &#9679; <span> i </span>
+                </p>
+              </a>
+            );
+          } else {
+            return (
+              <a href={val.footer_link.url}>
+                <p> {val.footer_content} </p>
+              </a>
+            );
+          }
+        })}
+      </div>
     </FooterEndSection>
-
-
   );
 };
 

@@ -41,10 +41,14 @@ const NavLink = styled.div`
   margin: auto 0;
   a {
     color: navy;
-    padding: 0 16px;
+    padding: 0 6vw;
     text-decoration: none;
     font-weight: bold;
     font-size: 16px;
+    @media screen and (max-width: 1050px) {
+      justify-content: none;
+      flex-wrap: wrap;
+}
   }
 `;
 
@@ -62,9 +66,9 @@ const NavLinks = styled.div`
   margin-bottom: 1em;
 
   img {
-    width: 2.5em;
+    width: 2em;
     margin: 0 0 0 0.5em;
-    margin-bottom: -1em;
+    margin-bottom: -0.8em;
   }
 `;
 const Branding = styled.div`

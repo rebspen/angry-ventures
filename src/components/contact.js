@@ -30,9 +30,9 @@ const ContactSection = styled.section`
   }
 
   img {
-    width: 2.7em;
+    width: 2.3em;
     margin:0;
-    margin-bottom: -1em;
+    margin-bottom: -0.9em;
   }  
   .submit{
     padding:0;

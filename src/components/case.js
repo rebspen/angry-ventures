@@ -16,17 +16,14 @@ const CaseDivide = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  img {
-    min-height: 21em;
-    min-width: 28 em;
-  }
   a{
     text-decoration: none;
     color: #1e2341;
     weight: 400;
-    img{
-      width: 1em;
-    }
+  }
+  .icon{
+    width:1em;
+    margin: 0 0 0 0.3em;
   }
 `;
 
@@ -50,9 +47,11 @@ const Case = ({ cases }) => {
               {/* <img src={val.case_image.url} /> */}
             </CaseDivide>
             <CaseDivide style={{marginLeft:"1em"}}>
+            <div>
               <RichText render={val.case_title} />
               <p>{val.case_content}</p>
-              <a href={val.case_link}><strong>{val.case_link_label}</strong></a>
+            </div>
+              <a href={val.case_link}><strong>{val.case_link_label}</strong> <img className="icon" src="/Images/right.png" alt=""/></a>
             </CaseDivide>
           </CaseSection>
         </>
@@ -62,9 +61,11 @@ const Case = ({ cases }) => {
         <>
           <CaseSection>
             <CaseDivide>
+            <div>
               <RichText render={val.case_title} />
               <p>{val.case_content}</p>
-              <a href={val.case_link}><strong>{val.case_link_label}</strong></a>
+            </div>
+              <a href={val.case_link}><strong>{val.case_link_label}</strong><img className="icon" src="/Images/right.png" alt=""/></a>
             </CaseDivide>
             <CaseDivide style={{marginLeft:"1em"}}>
               <ImageWrapper caseImage={val.case_image.url}></ImageWrapper>

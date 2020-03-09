@@ -97,7 +97,7 @@ const Layout = ({ children }) => {
                         <NavLink key={link.nav_link.url}>
                           <a href={link.nav_link.url}>
                             {link.label}
-                            <img src="/icons/right-arrow.png" alt=""/>
+                            <img src="/Images/right-arrow.png" alt=""/>
                           </a>
                         </NavLink>
                       )

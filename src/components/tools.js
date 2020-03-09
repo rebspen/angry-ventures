@@ -57,7 +57,7 @@ const Tools = ({ tools, ourTools, toolsTitle, toolsContent }) => {
             <button>
               <a href={val.tool_link.url}>
                 {val.tool_name}
-                <img src="/icons/right-arrow.png" alt=""/>
+                <img src="/Images/right-arrow.png" alt=""/>
               </a>
             </button>
             </ToolIndividual>

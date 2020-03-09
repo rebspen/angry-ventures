@@ -7,9 +7,13 @@ background: url('${props => props.backgroundImage}');
 height: calc(80vh - 66px);
 background-size: cover;
 background-repeat: no-repeat;
+background-position: center;
 display: flex;
 justify-content: center;
 align-items: flex-end;
+img{
+  width:3.5em;
+}
 `
 
 const Hero = ({logoImage, backgroundImage }) => {

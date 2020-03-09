@@ -32,6 +32,9 @@ export const query = graphql`
             }
             ... on PRISMIC_HomepageBodyCase {
               type
+              primary {
+                click_image
+              }
               fields {
                 case_content
                 case_image
@@ -47,6 +50,7 @@ export const query = graphql`
             ... on PRISMIC_HomepageBodyTools {
               type
               primary {
+                click_image
                 our_tools
                 tools_content
                 tools_title
@@ -63,6 +67,9 @@ export const query = graphql`
             }
             ... on PRISMIC_HomepageBodyCase_2 {
               type
+              primary {
+                click_image
+              }
               fields {
                 case_content
                 case_image
@@ -86,6 +93,7 @@ export const query = graphql`
                 tool_name
               }
               primary {
+                click_image
                 our_sequences
                 sequences_content
                 sequences_title
@@ -94,6 +102,7 @@ export const query = graphql`
             ... on PRISMIC_HomepageBodyContact_form {
               type
               primary {
+                click_image
                 contact_footer
                 contact_title
                 contact_subtitle

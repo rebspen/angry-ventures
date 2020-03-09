@@ -5,15 +5,15 @@
  * See: https://www.gatsbyjs.org/docs/use-static-query/
  */
 
-import React from "react"
-import PropTypes from "prop-types"
-import { StaticQuery, graphql, Link } from "gatsby"
-import styled from "styled-components"
-import "./layout.css"
+import React from "react";
+import PropTypes from "prop-types";
+import { StaticQuery, graphql, Link } from "gatsby";
+import styled from "styled-components";
+import "./layout.css";
 
 const Main = styled.main`
   margin: 0 auto;
-`
+`;
 const navigationQuery = graphql`
   {
     prismic {
@@ -21,6 +21,7 @@ const navigationQuery = graphql`
         edges {
           node {
             branding
+            click_image
             navigation_links {
               label
               nav_link {
@@ -34,7 +35,7 @@ const navigationQuery = graphql`
       }
     }
   }
-`
+`;
 
 const NavLink = styled.div`
   margin: auto 0;
@@ -44,12 +45,8 @@ const NavLink = styled.div`
     text-decoration: none;
     font-weight: bold;
     font-size: 16px;
-
-    &:hover {
-      color: orange;
-    }
   }
-`
+`;
 
 const Header = styled.header`
   display: flex;
@@ -57,25 +54,25 @@ const Header = styled.header`
   height: 120px;
   padding: 0 7em;
   box-sizing: border-box;
-`
+`;
 
 const NavLinks = styled.div`
   margin-left: auto;
   display: flex;
   margin-bottom: 1em;
 
-  img{
-  width: 3em;
-  margin:0 1em;
-  margin-bottom: -1em;
-}
-`
+  img {
+    width: 2.5em;
+    margin: 0 0 0 0.5em;
+    margin-bottom: -1em;
+  }
+`;
 const Branding = styled.div`
-img{
-  width: 2em;
-  margin-top: 2.3em;
-}
-`
+  img {
+    width: 2em;
+    margin-top: 2.3em;
+  }
+`;
 
 const Layout = ({ children }) => {
   return (
@@ -84,12 +81,15 @@ const Layout = ({ children }) => {
         <StaticQuery
           query={`${navigationQuery}`}
           render={data => {
-            console.log(data)
+            console.log(data);
             return (
               <>
-              <Branding>
-                <img src={data.prismic.allNavigations.edges[0].node.branding.url} alt=""/>
-              </Branding>
+                <Branding>
+                  <img
+                    src={data.prismic.allNavigations.edges[0].node.branding.url}
+                    alt=""
+                  />
+                </Branding>
                 <NavLinks>
                   {data.prismic.allNavigations.edges[0].node.navigation_links.map(
                     link => {
@@ -97,25 +97,31 @@ const Layout = ({ children }) => {
                         <NavLink key={link.nav_link.url}>
                           <a href={link.nav_link.url}>
                             {link.label}
-                            <img src="/Images/right-arrow.png" alt=""/>
+                            <img
+                              src={
+                                data.prismic.allNavigations.edges[0].node
+                                  .click_image.url
+                              }
+                              alt=""
+                            />
                           </a>
                         </NavLink>
-                      )
+                      );
                     }
                   )}
                 </NavLinks>
               </>
-            )
+            );
           }}
         />
       </Header>
       <Main>{children}</Main>
     </>
-  )
-}
+  );
+};
 
 Layout.propTypes = {
-  children: PropTypes.node.isRequired,
-}
+  children: PropTypes.node.isRequired
+};
 
-export default Layout
+export default Layout;

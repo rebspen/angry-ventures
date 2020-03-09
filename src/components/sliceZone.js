@@ -30,7 +30,7 @@ const SliceZone = ({ body }) => {
             />
           );
         } else if (val.type === "case") {
-          return <Case key={i} cases={val.fields} />;
+          return <Case key={i} cases={val.fields} icon={val.primary.click_image} />;
         } else if (val.type === "tools") {
           return (
             <Tools
@@ -39,10 +39,13 @@ const SliceZone = ({ body }) => {
               ourTools={val.primary.our_tools}
               toolsTitle={val.primary.tools_title}
               toolsContent={val.primary.tools_content}
+              icon={val.primary.click_image}
             />
           );
         } else if (val.type === "case_2") {
-          return <Case key={i} cases={val.fields} />;
+          return (
+            <Case key={i} cases={val.fields} icon={val.primary.click_image} />
+          );
         } else if (val.type === "sequences") {
           return (
             <Tools
@@ -51,6 +54,7 @@ const SliceZone = ({ body }) => {
               ourTools={val.primary.our_sequences}
               toolsTitle={val.primary.sequences_title}
               toolsContent={val.primary.sequences_content}
+              icon={val.primary.click_image}
             />
           );
         } else if (val.type === "contact_form") {
@@ -63,20 +67,20 @@ const SliceZone = ({ body }) => {
               email={val.primary.email_placeholder}
               last={val.primary.last_name_placeholder}
               name={val.primary.name_placeholder}
+              icon={val.primary.click_image}
             />
           );
         } else if (val.type === "footer") {
-          return <Footer key={i}
-          title={val.primary.footer_title}
-          social={val.fields}
-           />;
-        } else if (val.type == "footer_ending"){
-          return <FooterEnd
-          key={i}
-          links={val.fields}
-           />
-          }
-          else {
+          return (
+            <Footer
+              key={i}
+              title={val.primary.footer_title}
+              social={val.fields}
+            />
+          );
+        } else if (val.type == "footer_ending") {
+          return <FooterEnd key={i} links={val.fields} />;
+        } else {
           return null;
         }
       })}

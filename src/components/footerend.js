@@ -10,6 +10,10 @@ const FooterEndSection = styled.section`
     display: flex;
     flex-direction: row;
     justify-content: center;
+    @media screen and (max-width: 1050px) {
+      justify-content: none;
+      flex-wrap: wrap;
+}
   }
 
   span{

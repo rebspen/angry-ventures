@@ -7,6 +7,9 @@ const CaseSection = styled.section`
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
+  @media screen and (max-width: 992px) {
+  flex-direction: row;
+}
 `;
 
 const CaseDivide = styled.div`
@@ -16,6 +19,9 @@ const CaseDivide = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  @media screen and (max-width: 992px) {
+  width: 100%;
+}
   a{
     text-decoration: none;
     color: #1e2341;
@@ -33,9 +39,15 @@ height: 23em;
 width: 21em;
 background-size: cover;
 background-repeat: no-repeat;
+background-position: center;
+@media screen and (max-width: 1050px) {
+  min-width: 90%;
+  max-width:90%;
+  height: 30vw;
+}
 `;
 
-const Case = ({ cases }) => {
+const Case = ({ cases, icon }) => {
   console.log("cases", cases);
   return cases.map((val, i) => {
     if (i % 2 === 0) {
@@ -46,12 +58,12 @@ const Case = ({ cases }) => {
               <ImageWrapper caseImage={val.case_image.url}></ImageWrapper>
               {/* <img src={val.case_image.url} /> */}
             </CaseDivide>
-            <CaseDivide style={{marginLeft:"1em", padding:"1em"}}>
+            <CaseDivide>
             <div>
               <RichText render={val.case_title} />
               <p>{val.case_content}</p>
             </div>
-              <a href={val.case_link}><strong>{val.case_link_label}</strong> <img className="icon" src="/Images/right.png" alt=""/></a>
+              <a href={val.case_link}><strong>{val.case_link_label}</strong> <img className="icon" src={icon.url} alt=""/></a>
             </CaseDivide>
           </CaseSection>
         </>
@@ -65,9 +77,9 @@ const Case = ({ cases }) => {
               <RichText render={val.case_title} />
               <p>{val.case_content}</p>
             </div>
-              <a href={val.case_link}><strong>{val.case_link_label}</strong><img className="icon" src="/Images/right.png" alt=""/></a>
+              <a href={val.case_link}><strong>{val.case_link_label}</strong><img className="icon" src={icon.url} alt=""/></a>
             </CaseDivide>
-            <CaseDivide style={{marginLeft:"1em",  padding:"1em"}}>
+            <CaseDivide>
               <ImageWrapper caseImage={val.case_image.url}></ImageWrapper>
               {/* <img src={val.case_image.url} /> */}
             </CaseDivide>

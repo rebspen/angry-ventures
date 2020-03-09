@@ -43,7 +43,7 @@ const ToolIndividual = styled.div`
   }
 `;
 
-const Tools = ({ tools, ourTools, toolsTitle, toolsContent }) => {
+const Tools = ({ tools, ourTools, toolsTitle, toolsContent,icon }) => {
   return (
     <ToolSection>
       <RichText render={toolsTitle} />
@@ -57,7 +57,7 @@ const Tools = ({ tools, ourTools, toolsTitle, toolsContent }) => {
             <button>
               <a href={val.tool_link.url}>
                 {val.tool_name}
-                <img src="/Images/right-arrow.png" alt=""/>
+                <img src={icon.url} alt=""/>
               </a>
             </button>
             </ToolIndividual>

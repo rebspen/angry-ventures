@@ -15,9 +15,8 @@ const SliceZone = ({ body }) => {
         if (val.type === "hero") {
           return (
             <Hero
-              title={val.primary.hero_title}
-              content={val.primary.hero_content}
               backgroundImage={val.primary.background_image.url}
+              logoImage={val.primary.logo_image.url}
               key={i}
             />
           );
